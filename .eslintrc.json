@@ -1,3 +1,125 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:import/recommended",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "tailwindcss"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["~", "./src"]],
+        "extensions": [".js", ".jsx", ".graphql", ".gql", ".ts", ".tsx"]
+      }
+    },
+    "import/no-unresolved": "on"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "phantomjs": true,
+    "es6": true
+  },
+  "rules": {
+    "import/extensions": [
+      "error",
+      // Original CRA extension supports: https://github.com/facebook/create-react-app/blob/8fa0a26ea3e7a64660c607ee4e10d1896b9359fe/packages/react-scripts/config/paths.js#L35-L45
+      // With addition for .gql and .graphql
+      "ignorePackages",
+      {
+        "web.mjs": "never",
+        "web.js": "never",
+        "web.ts": "never",
+        "web.tsx": "never",
+        "web.jsx": "never",
+        "mjs": "never",
+        "js": "never",
+        "ts": "never",
+        "tsx": "never",
+        "json": "never",
+        "jsx": "never",
+        "gql": "never",
+        "graphql": "never"
+      }
+    ],
+    "import/no-anonymous-default-export": "off",
+    "import/prefer-default-export": 1,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.jsx",
+          "**/*.spec.js",
+          "**/*.spec.js",
+          "**/tests/*.*",
+          "**/tests/**/*.*",
+          "config-overrides.js"
+        ]
+      }
+    ],
+    "class-methods-use-this": 1,
+    "no-restricted-syntax": 1,
+    "no-use-before-define": "warn",
+    "no-param-reassign": 1,
+    "no-console": "warn",
+    "no-useless-escape": 1,
+    "new-cap": 0,
+    "func-names": 0,
+    "function-paren-newline": ["error", "consistent"],
+    "prefer-spread": 1,
+    "space-before-function-paren": 0,
+    "comma-dangle": ["off", "always"],
+    "strict": 0,
+    "max-len": [1, 120],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "shorthandFirst": true,
+        "reservedFirst": true
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/require-default-props": "off",
+    "react/prop-types": 0,
+    "react/forbid-prop-types": 1,
+    "react/style-prop-object": 1,
+    "react/jsx-no-bind": 1,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-closing-bracket-location": 1,
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-boolean-value": [1, "never"],
+    "react/jsx-props-no-spreading": 0,
+    "jsx-a11y/no-static-element-interactions": 1,
+    "arrow-parens": ["error", "as-needed"],
+    "prefer-arrow-callback": "warn",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "tailwindcss/classnames-order": "error"
+  }
 }
