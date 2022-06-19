@@ -1,7 +1,13 @@
 import type { NextPage } from 'next';
+import Home from 'modules/Home';
 
-const Home: NextPage = () => (
-  <h1 className="text-3xl font-bold text-blue-400 underline">Hello world</h1>
-);
+const Homepage: NextPage = () => {
+  const dummyFetchedData = {
+    title: 'judul',
+    desc: 'deskripsi',
+  };
 
-export default Home;
+  return <Home data={dummyFetchedData} />;
+};
+
+export default Homepage;
