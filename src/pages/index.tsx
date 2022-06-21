@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Home from 'modules/Home';
+import Home from '@/modules/Home';
 
 const Homepage: NextPage = () => {
   const dummyFetchedData = {

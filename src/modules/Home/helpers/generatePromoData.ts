@@ -1,4 +1,4 @@
-import isObjEqual from 'helpers/isObjEqual';
+import isObjEqual from '@/helpers/isObjEqual';
 import type { Promotion } from '../types';
 import { DEFAULT_DATA } from './constants';
 
